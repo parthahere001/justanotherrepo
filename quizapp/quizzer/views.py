@@ -41,7 +41,7 @@ def finalscore(request):
     questions = Questions.objects.all()
     score_count = 0
     for question in questions:
-        chosen = request.POST.get(question.id)
+        chosen = request.POST.get(str(question.id))
         print(chosen)
         if (chosen == question.ans):
             score_count+=1
