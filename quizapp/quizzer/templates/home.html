@@ -1,1 +1,12 @@
 <h1>WWE</h1>
+
+{% for q in questions %}
+Question: {{q.question_name}}<br>
+<input type="radio">{{q.opti1}}<br>
+<input type="radio">{{q.opti2}}<br>
+<input type="radio">{{q.opti3}}<br>
+<input type="radio">{{q.opti4}}<br>
+
+<input type="submit" value="SUBMIT">
+<br><br>
+{% endfor %}

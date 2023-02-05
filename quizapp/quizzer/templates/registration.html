@@ -1,0 +1,18 @@
+<html>
+<body>
+    <div class="context">
+      <div class="card">
+      <h1>Registration</h1>
+  <form method="POST" action="/register/">
+    {% csrf_token %}
+    <input class="search-bar" name="username" type="text" placeholder="Username"><br>
+    <input class="search-bar" name="email" type="email" placeholder="Email id"><br>
+    <input class="search-bar" name="password1" type="password" placeholder="Password"><br>
+    <input class="search-bar" name="password2" type="password" placeholder="Password confirmation"><br>
+    <button type="submit" style="margin-left: 50px;">Sign Up</button>
+  </form>
+  Already have an account? <a href="#">Sign Up</a>
+  </div>
+  </div>
+  </body>
+  </html>
