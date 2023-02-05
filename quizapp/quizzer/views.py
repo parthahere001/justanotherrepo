@@ -11,7 +11,7 @@ def home(request):
            return render (request,'home.html', context)
     else:
         return render (request,'registration.html', context)
-
+    
 def registration_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -36,3 +36,16 @@ def login_view(request):
 
     context = {}
     return render(request, 'registration.html', context)
+
+def finalscore(request):
+    questions = Questions.objects.all()
+    score_count = 0
+    for question in questions:
+        chosen = request.POST.get(question.id)
+        print(chosen)
+        if (chosen == question.ans):
+            score_count+=1
+    context = {'score_count': score_count}
+    return render (request,'finalscore.html', context)
+
+
