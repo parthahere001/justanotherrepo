@@ -1,1 +1,27 @@
-<h1>WWE</h1>
+<h1>QUIZ</h1>
+<style>
+    .question-card{
+        background-color: papayawhip;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+</style>
+
+<form method="POST" action="/final/">
+    {% csrf_token %}
+{% for q in questions %}
+<div class="question-card">
+Question: {{q.question_name}}<br>
+<input type="radio" name="{{q.id}}" value="{{q.opti1}}">{{q.opti1}}<br>
+<input type="radio" name="{{q.id}}" value="{{q.opti2}}">{{q.opti2}}<br>
+<input type="radio" name="{{q.id}}" value="{{q.opti3}}">{{q.opti3}}<br>
+<input type="radio" name="{{q.id}}" value="{{q.opti4}}">{{q.opti4}}<br>
+<br>
+</div>
+<br>
+{% endfor %}
+<input type="submit" value="SUBMIT">
+<br><br>
+</form>
