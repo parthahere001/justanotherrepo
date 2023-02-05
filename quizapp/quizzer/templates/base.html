@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %} {% endblock title %}
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="side menu">
+                    <li> <a href="{%url 'home'%}">Home</a></li>
+                    <li> <a href="{%url 'quize'%}">Quize</a></li>
+                    <li> <a href="#">User</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="question">
+        <div class="container">
+            {% block body %} {% endblock body %}
+        </div>
+    </div>
+</body>
+</html>
