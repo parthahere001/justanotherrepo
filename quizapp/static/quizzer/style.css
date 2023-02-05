@@ -9,7 +9,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background: #020628;
+    background-color: rgb(255, 233, 215);
     color: #fff;
 }
 #header{
@@ -36,14 +36,32 @@ nav ul li{
 
 nav ul li a{
     text-decoration: none;
-    color: #fff;
+    color: #000000;
     font-size: 18px;
     position: relative;
 }
 
-#question{
+#home{
     margin: 0 30px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(22, 7, 65);
     height: 80vh;
     border-radius: 7px;
+}
+
+.container h1{
+    font-size: 80px;
+    padding-top: 9%;
+    text-align: center;
+    align-content: center;
+}
+
+.container p{
+    font-size: 20px;
+    padding-top: 3%;
+    text-align: center;
+    align-content: center;
+}
+
+#quize{
+    
 }

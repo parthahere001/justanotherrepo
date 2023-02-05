@@ -4,5 +4,5 @@ from quizzer import views
 
 urlpatterns = [
     path('',views.home, name='home'),
-    path('/quize',views.quize, name='quize')
+    path('quize',views.quize, name='quize')
 ]
