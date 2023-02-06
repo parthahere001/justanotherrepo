@@ -35,7 +35,7 @@ def login_view(request):
         print('USER NOT FOUND')
 
     context = {}
-    return render(request, 'registration.html', context)
+    return render(request, 'userlogin.html', context)
 
 def finalscore(request):
     questions = Questions.objects.all()
