@@ -2,6 +2,7 @@ from django.shortcuts import render,HttpResponse, redirect
 from .models import Questions
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from .forms import CreateQuestionForm
 
 # Create your views here.
 def home(request):
@@ -49,3 +50,14 @@ def finalscore(request):
     return render (request,'finalscore.html', context)
 
 
+def createQuestions(request):
+    form= CreateQuestionForm()
+
+    if request.method=="POST":
+        form=CreateQuestionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        
+    context={'form':form}
+    return render(request, 'addQuestions.html',context)
