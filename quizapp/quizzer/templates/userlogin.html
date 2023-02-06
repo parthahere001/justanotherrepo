@@ -1,0 +1,18 @@
+<html>
+<body>
+    <div class="context">
+      <div class="card">
+      <h1>Login</h1>
+  <form method="POST" action="/login/">
+    {% csrf_token %}
+    <input  name="username" type="text" placeholder="Username"><br>
+    
+    <input  name="password" type="password" placeholder="Password"><br>
+
+      <button type="submit" class="btn ">Login</button>
+  </form>
+  Already have an account? <a href="#">Sign Up</a>
+  </div>
+  </div>
+  </body>
+  </html>
