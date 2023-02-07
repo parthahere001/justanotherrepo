@@ -1,10 +1,14 @@
 from django.shortcuts import render,HttpResponse, redirect
 from .models import Questions
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateQuestionForm
 
 # Create your views here.
+def base(request):
+    return render (request,'base.html',context= {'user':User})
+
 def home(request):
     questions = Questions.objects.all()
     context = {'questions': questions}
