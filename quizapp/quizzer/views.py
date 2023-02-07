@@ -61,3 +61,7 @@ def createQuestions(request):
         
     context={'form':form}
     return render(request, 'addQuestions.html',context)
+
+def logoutUser(request):
+    logout(request)
+    return redirect("/")
