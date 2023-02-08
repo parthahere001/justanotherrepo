@@ -15,7 +15,7 @@ def home(request):
     if request.user.is_authenticated:
            return render (request,'home.html', context)
     else:
-        return render (request,'registration.html', context)
+        return render (request,'userlogin.html', context)
     
 def registration_view(request):
     if request.method == 'POST':
@@ -47,7 +47,6 @@ def finalscore(request):
     score_count = 0
     for question in questions:
         chosen = request.POST.get(str(question.id))
-        print(chosen)
         if (chosen == question.ans):
             score_count+=1
     context = {'score_count': score_count}
