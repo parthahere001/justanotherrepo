@@ -45,12 +45,16 @@ def login_view(request):
 def finalscore(request):
     questions = Questions.objects.all()
     score_count = 0
+    win = False
     total_questions = questions.count()
     for question in questions:
         chosen = request.POST.get(str(question.id))
         if (chosen == question.ans):
             score_count+=1
-    context = {'score_count': score_count, 'total_questions': total_questions}
+
+    if score_count==total_questions:
+        win=True
+    context = {'score_count': score_count, 'total_questions': total_questions, 'win': win}
     return render (request,'finalscore.html', context)
 
 

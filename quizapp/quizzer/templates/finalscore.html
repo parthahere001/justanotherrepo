@@ -22,6 +22,20 @@ body{
     background-color: rgb(215, 243, 250);
 }
 
+.button {
+    background-color: #49a4c0; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .button-place{
+    display: flex;
+    justify-content: center;
+  }
         </style>
     </head>
 
@@ -30,6 +44,13 @@ body{
         <div class="card">
     
     <h1>YOUR SCORE : {{ score_count }} / {{total_questions}}</h1>
+    {% if win is True %}
+    <h3>CONGRATULATIONS!!</h3>
+    {% endif %}
+
+    <div class="button-place">
+        <a href="{% url 'base'%}" class="button">HOME</a>
+    </div>
 
     </div>
     </div>
