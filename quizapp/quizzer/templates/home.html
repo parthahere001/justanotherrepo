@@ -7,7 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <style>
     body{
-        background-color: antiquewhite;
+        background-color: rgb(215, 243, 250);
     }
     .card{
         margin-left: 60px;
@@ -20,19 +20,50 @@
         display: flex;
         justify-content: center;
     }
+    .nav{
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(8, 36, 93);
+        justify-content: space-between;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    .top{
+    text-align: right;
+    color: azure;
+    background-color: rgb(8, 36, 93);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.logout-btn {
+    background-color: #49a4c0; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
 </style>
 </head>
 
+<div class="nav">
 <div class="top">
 Logged in as {{user.username}}
 </div>
+
 <div class="top">
- <a href="{% url 'logout'%}">Logout</a>
+ <a href="{% url 'logout'%}" class="logout-btn">Logout</a>
+</div>
 </div>
 
 <body>
+    <br>
 <h1 class="heading">QUIZ</h1>
-<br>
 <form method="POST" action="/final/">
     {% csrf_token %}
 {% for q in questions %}
@@ -54,7 +85,7 @@ Logged in as {{user.username}}
 <div class="btn">
 <input type="submit" class="btn btn-success" value="SUBMIT"></button>
 </div>
-
+<br>
 </form>
 </body>
 </html>

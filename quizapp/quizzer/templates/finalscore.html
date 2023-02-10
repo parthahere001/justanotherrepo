@@ -1,1 +1,38 @@
-<h1>FINAL SCORE : {{ score_count }}</h1>
+<html>
+    <head>
+        <style>
+            .context{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    background: #000000d0;
+    color: white;
+    border-radius: 30px;
+    padding: 2em;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body{
+    background-color: rgb(215, 243, 250);
+}
+
+        </style>
+    </head>
+
+    <body>
+        <div class="context">
+        <div class="card">
+    
+    <h1>YOUR SCORE : {{ score_count }} / {{total_questions}}</h1>
+
+    </div>
+    </div>
+    </body>
+    
+</html>
