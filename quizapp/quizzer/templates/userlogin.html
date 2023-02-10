@@ -1,15 +1,69 @@
 <html>
+  <head>
+    <style>
+      /* box css */
+  .context{
+      display: flex;
+      justify-content: center;
+  }
+
+  .card{
+      background: #000000d0;
+      color: white;
+      border-radius: 30px;
+      padding: 2em;
+      width: 100%;
+      max-width: 420px;
+      margin: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  body{
+    background-color: rgb(215, 243, 250);
+  }
+
+.search-bar {
+    background: #7c7c7c2b;
+    padding: 8px;
+   border-radius: 15px;
+   border: none;
+   outline: none;
+   color: rgb(203, 162, 162);
+   margin: 10px;
+   width: 100%;
+}
+
+.btn {
+    background-color: #49a4c0; /* Green */
+    border: none;
+    color: white;
+    padding: 11px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .btn-place{
+    display: flex;
+    justify-content: center;
+  }
+    </style>
+  </head>
 <body>
     <div class="context">
       <div class="card">
       <h1>Login</h1>
   <form method="POST" action="/login/">
     {% csrf_token %}
-    <input  name="username" type="text" placeholder="Username"><br>
+    <input  class="search-bar" name="username" type="text" placeholder="Username"><br>
     
-    <input  name="password" type="password" placeholder="Password"><br>
-
-      <button type="submit" class="btn ">Login</button>
+    <input  class="search-bar" name="password" type="password" placeholder="Password"><br>
+<br>
+    <div class="btn-place">
+      <button type="submit" class="btn">LOGIN</button>
+    </div>
   </form>
   Don't have account? <a href="{% url 'register'%}">Sign Up</a>
   </div>
